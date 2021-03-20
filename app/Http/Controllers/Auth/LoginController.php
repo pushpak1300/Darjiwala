@@ -28,6 +28,11 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/';
 
+    public function username()
+    {
+        return 'mobile_no';
+    }
+
     public function showLoginForm()
     {
         return Inertia::render('Auth/Login');
