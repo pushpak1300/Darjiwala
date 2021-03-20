@@ -20,4 +20,5 @@ Route::get('/', function () {
         Inertia::render('Hello');
 })->name('hello');
 
+
 Auth::routes();
