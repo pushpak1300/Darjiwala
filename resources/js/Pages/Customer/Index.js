@@ -23,7 +23,7 @@ const Index = () => {
 
                 <ul className="relative divide-y divide-gray-200 bg-white">
                     <li>
-                        <a href="/" className="block hover:bg-gray-50">
+                        <InertiaLink href="/customer/create" className="block hover:bg-gray-50">
                         <div className="flex items-center px-4 py-4 sm:px-6">
                             <div className="min-w-0 flex-1 flex items-center">
                             <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
@@ -53,11 +53,11 @@ const Index = () => {
                 </svg>
                             </div>
                         </div>
-                        </a>
+                        </InertiaLink>
                     </li>
 
                     <li>
-                        <a href="/" className="block hover:bg-gray-50">
+                        <InertiaLink href="/customer/create" className="block hover:bg-gray-50">
                         <div className="flex items-center px-4 py-4 sm:px-6">
                             <div className="min-w-0 flex-1 flex items-center">
                             <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
@@ -87,7 +87,7 @@ const Index = () => {
                 </svg>
                             </div>
                         </div>
-                        </a>
+                        </InertiaLink>
                     </li>
 
                     <li>

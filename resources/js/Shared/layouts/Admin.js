@@ -4,10 +4,10 @@ import { InertiaLink } from "@inertiajs/inertia-react";
 
 // components
 
-import AdminNavbar from "../../Shared/Navbars/AdminNavbar.js";
-import Sidebar from "../../Shared/Sidebar/Sidebar.js";
-import HeaderStats from "../../Shared/Headers/HeaderStats.js";
-import FooterAdmin from "../../Shared/Footers/FooterAdmin.js";
+import AdminNavbar from "../Navbars/AdminNavbar.js";
+import Sidebar from "../Sidebar/Sidebar.js";
+import HeaderStats from "../Headers/HeaderStats.js";
+import FooterAdmin from "../Footers/FooterAdmin.js";
 
 // views
 
