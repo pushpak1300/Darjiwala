@@ -2,25 +2,28 @@
 
 namespace App\Nova;
 
-use App\Models\KurtaMeasurementField;
-use App\Models\PyjamaMeasurementField;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
-use R64\NovaFields\JSON;
-
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Measurement extends Resource
+class Order extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Measurement::class;
+    public static $model = \App\Models\Order::class;
 
+    /**
+     * The single value that should be used to represent the resource when being displayed.
+     *
+     * @var string
+     */
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -39,20 +42,11 @@ class Measurement extends Resource
      */
     public function fields(Request $request)
     {
-        $kurtaFields = KurtaMeasurementField::select('field_en')->get()->pluck('field_en')
-            ->map(function ($item, $key) {
-                return Number::make($item);
-            });
-
-        $pyjamaFields = PyjamaMeasurementField::select('field_en')->get()->pluck('field_en')
-            ->map(function ($item, $key) {
-                return Number::make($item);
-            });
         return [
-            ID::make()->sortable(),
-            JSON::make('Kurta', $kurtaFields)->fieldClasses('w-full'),
-            JSON::make('Pyjama', $pyjamaFields)->fieldClasses('w-full'),
-            DateTime::make('Created At')->hideWhenCreating(),
+            ID::make(__('ID'), 'id')->sortable(),
+            Date::make('Delivery Date')->required(),
+            BelongsTo::make('Measurement', 'measurement'),
+
         ];
     }
 
@@ -98,10 +92,5 @@ class Measurement extends Resource
     public function actions(Request $request)
     {
         return [];
-    }
-
-    public function title()
-    {
-        return $this->customer->name;
     }
 }
