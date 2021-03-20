@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\MeasurementsController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,6 +23,12 @@ Route::get('/', function () {
         Inertia::render('Hello');
 })->name('hello');
 
-Route::resource('/customer',CustomerController::class);
+Route::resource('customer',CustomerController::class)->except(['edit','update','destroy']);
+
+Route::get('/customer/{customer}/mesurement/create',[MeasurementsController::class,'create']);
+Route::post('/customer/{customer}/mesurement',[MeasurementsController::class,'store']);
+
+Route::get('/customer/{customer}/mesurement/{measurement}/order/create',[OrderController::class,'create']);
+Route::post('/customer/{customer}/mesurement/{measurement}/order',[OrderController::class,'store']);
 
 Auth::routes();
