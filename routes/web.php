@@ -21,6 +21,6 @@ Route::get('/', function () {
         Inertia::render('Hello');
 })->name('hello');
 
-Route::resource('/customer',CustomerController::class);
+Route::resource('/customer',CustomerController::class)->except(['edit','update','destroy']);
 
 Auth::routes();
