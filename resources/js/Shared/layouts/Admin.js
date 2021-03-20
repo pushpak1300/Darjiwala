@@ -31,7 +31,7 @@ export default function Admin({ title, children }) {
           <article>
             {children}
           </article>
-          <FooterAdmin />
+          <FooterAdmin/>
         </div>
       </div>
     </>

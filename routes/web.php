@@ -28,6 +28,10 @@ Route::get('/customerprofile', function () {
     return Inertia::render('CustomerProfile/CustomerProfile');
 })->name('customerprofile');
 
+Route::get('/order/new', function () {
+    return Inertia::render('Order/Index');
+})->name('neworder');
+
 Route::resource('customer',CustomerController::class)->except(['edit','update','destroy']);
 
 Route::get('/customer/{customer}/order/create',[MeasurementsController::class,'create'])->name('order.create');

@@ -18,7 +18,6 @@ export default function Auth({ title, children }) {
 
   return (
     <>
-      <Navbar transparent />
       <main>
         <section className="relative w-full h-full py-40 min-h-screen">
           <div
@@ -28,7 +27,7 @@ export default function Auth({ title, children }) {
                 "https://d2wvwvig0d1mx7.cloudfront.net/data/org/194/media/img/cache/551x0/2132919_551x0.jpg",
             }}
           ></div>
-          <article>
+          <article className="py-12">
             {children}
           </article>
           <FooterSmall absolute />

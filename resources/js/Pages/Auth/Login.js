@@ -1,7 +1,23 @@
 import React from "react";
-import { InertiaLink } from '@inertiajs/inertia-react'
 
-export default function Login() {
+import Auth from "../../Shared/Layouts/Auth";
+
+import { InertiaLink, useForm } from '@inertiajs/inertia-react'
+import { set } from "lodash";
+
+function Login() {
+
+  const { data, setData, errors, post, processing } = useForm({
+    mobile_no: '',
+    password: '',
+    remember_me: true
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    post(route('login'));
+  }
+
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -17,18 +33,20 @@ export default function Login() {
                 <hr className="mt-6 border-b-1 border-blueGray-300" />
               </div>
               <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       htmlFor="grid-password"
                     >
-                      Email
+                      Mobile No.
                     </label>
                     <input
-                      type="email"
+                      type="number"
+                      name="mobile_no"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Email"
+                      placeholder="Mobile Phone"
+                      onChange={e => setData('mobile_no', e.target.value)}
                     />
                   </div>
 
@@ -41,8 +59,10 @@ export default function Login() {
                     </label>
                     <input
                       type="password"
+                      name="password"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Password"
+                      onChange={e => setData('password', e.target.value)}
                     />
                   </div>
                   <div>
@@ -50,7 +70,9 @@ export default function Login() {
                       <input
                         id="customCheckLogin"
                         type="checkbox"
+                        name="remember_me"
                         className="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
+                        onChange={e => setData('remember_me', e.target.checked)}
                       />
                       <span className="ml-2 text-sm font-semibold text-blueGray-600">
                         Remember me
@@ -61,7 +83,7 @@ export default function Login() {
                   <div className="text-center mt-6">
                     <button
                       className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                      type="button"
+                      type="submit"
                     >
                       Sign In
                     </button>
@@ -69,25 +91,12 @@ export default function Login() {
                 </form>
               </div>
             </div>
-            <div className="flex flex-wrap mt-6 relative">
-              <div className="w-1/2">
-                <a
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  className="text-blueGray-200"
-                >
-                  <small>Forgot password?</small>
-                </a>
-              </div>
-              <div className="w-1/2 text-right">
-                <InertiaLink to="/auth/register" className="text-blueGray-200">
-                  <small>Create new account</small>
-                </InertiaLink>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
+
+Login.layout = page => <Auth children={page} title="Sign in" />;
+export default Login;
