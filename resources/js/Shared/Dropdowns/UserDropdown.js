@@ -31,7 +31,7 @@ const UserDropdown = () => {
             <img
               alt="..."
               className="w-full rounded-full align-middle border-none shadow-lg"
-              src={require("assets/img/team-1-800x800.jpg").default}
+              src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/194/media/img/cache/551x0/2132919_551x0.jpg"
             />
           </span>
         </div>

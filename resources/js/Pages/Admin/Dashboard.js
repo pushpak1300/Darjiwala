@@ -1,5 +1,6 @@
 import React from "react";
 
+import Admin from "../../Shared/Layouts/Admin";
 // components
 
 import CardLineChart from "../../Shared/Cards/CardLineChart";
@@ -7,25 +8,16 @@ import CardBarChart from "../../Shared/Cards/CardBarChart.js";
 import CardPageVisits from "../../Shared/Cards/CardPageVisits.js";
 import CardSocialTraffic from "../../Shared/Cards/CardSocialTraffic.js";
 
-export default function Dashboard() {
+function Dashboard() {
   return (
     <>
-      <div className="flex flex-wrap">
-        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-          <CardLineChart />
-        </div>
-        <div className="w-full xl:w-4/12 px-4">
-          <CardBarChart />
-        </div>
-      </div>
-      <div className="flex flex-wrap mt-4">
-        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-          <CardPageVisits />
-        </div>
-        <div className="w-full xl:w-4/12 px-4">
-          <CardSocialTraffic />
-        </div>
+      <div className="relative flex flex-wrap ml-5 mr-5">
+          <h1 className="text-white text-sm uppercase hidden lg:inline-block font-semibold">Dashboard</h1>
       </div>
     </>
   );
 }
+
+Dashboard.layout = page => <Admin children={page} title="Dashboard" />;
+
+export default Dashboard;

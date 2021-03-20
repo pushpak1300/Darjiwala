@@ -20,8 +20,8 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return
-        Inertia::render('Hello');
-})->name('hello');
+        Inertia::render('Admin/Dashboard');
+})->name('admin');
 
 Route::resource('customer',CustomerController::class)->except(['edit','update','destroy']);
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import UserDropdown from "components/Dropdowns/UserDropdown.js";
+import UserDropdown from "../Dropdowns/UserDropdown.js";
 
 export default function Navbar() {
   return (
@@ -11,10 +11,10 @@ export default function Navbar() {
           {/* Brand */}
           <a
             className="text-white text-sm uppercase hidden lg:inline-block font-semibold"
-            href="#pablo"
+            href="#"
             onClick={(e) => e.preventDefault()}
           >
-            Dashboard
+            Darjiwala
           </a>
           {/* Form */}
           <form className="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
