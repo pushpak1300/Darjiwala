@@ -20,7 +20,7 @@ const props = {
             mobile :  "91353534",
             age : 34,
             address : "Asda asdasdsdssdsadd",
-            email : "abc@d.com"
+            email : "pqrs@d.com"
         }, 
         {
             id : 3,
@@ -28,7 +28,7 @@ const props = {
             mobile :  "84353534",
             age : 34,
             address : "asdasda asdasdsd",
-            email : "abc@d.com"
+            email : "tuv@d.com"
         }, 
         {
             id : 4,
@@ -36,7 +36,7 @@ const props = {
             mobile :  "59353534",
             age : 34,
             address : "asds asdsa asdsd",
-            email : "abc@d.com"
+            email : "wxy@d.com"
         } 
     ]
 }
@@ -107,7 +107,7 @@ const Index = () => {
                                         </div>
                                         <div className="hidden md:block">
                                         <div>
-                                            <p className="text-sm text-gray-900">
+                                            <p className="text-sm font-semibold text-gray-500">
                                                 {e.email}
                                             </p>
                                              

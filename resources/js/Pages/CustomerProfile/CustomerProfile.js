@@ -20,36 +20,6 @@ const CustomerProfile = () => {
     const [data,setData] = useState(props.user); 
     return(
     <>
-        {/* <div className="relative max-w-lg bg-white shadow-lg rounded-lg overflow-hidden my-4">
-            <div className=" py-3 px-6">
-            <h1 className="text-4xl font-bold text-gray-800">{data.name}</h1>
-            <div className="flex items-center mt-4 text-gray-700">
-                <i className="fas fa-2x fa-user" ></i>
-                <h1 className="ml-3 px-2 text-md">{data.age}</h1>
-            </div>
-            <div className="flex items-center mt-4 text-gray-700">
-                <i className="fas fa-2x fa-phone" ></i>
-                <h1 className="ml-3 px-2 text-md">{data.mobile}</h1>
-            </div>
-            <div className="flex items-center mt-4 text-gray-700">
-                <i className="fas fa-2x fa-envelope" ></i>
-                <h1 className="ml-3 px-2 text-md">{data.email}</h1>
-            </div>
-            <div className="flex items-center mt-4 text-gray-700">
-                <i className="fas fa-2x fa-home" ></i>
-                <h1 className="ml-3 px-2 text-md">{data.address}</h1>
-            </div>
-            <div className="flex items-center mt-4 text-gray-700">
-                <i className="fas fa-2x fa-calendar" ></i>
-                <h1 className="ml-3 px-2 text-md">{data.createdAt}</h1>
-            </div>
-            <div className="flex justify-between items-center mt-4 gap-2">
-                <InertiaLink href="/" as="button" type="button" className="w-full h-12 rounded-md border-2 text-md hover:shadow hover:bg-red-700 hover:border-red-700 hover:text-white ">
-                    Add measurements
-                </InertiaLink>
-            </div>
-        </div>
-    </div> */}
 
     <div className="relative bg-white shadow overflow-hidden sm:rounded-lg">
     <div className="px-4 py-5 sm:px-6">
