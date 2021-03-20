@@ -17,6 +17,7 @@ class CreateMeasurementsTable extends Migration
             $table->id();
             $table->json('kurta')->nullable();
             $table->json('pyjama')->nullable();
+            $table->foreignId('customers');
             $table->timestamps();
         });
     }

@@ -17,14 +17,16 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->date('delivery_date');
             $table->string('fabric_type');
+            $table->string('kurta_types_id')->nullable();
             $table->integer('kurta_quantity')->nullable();
             $table->float('kurta_amount')->nullable();
             $table->float('kurta_total')->nullable();
+            $table->string('pyjama_types_id')->nullable();
             $table->integer('pyjama_quantity')->nullable();
             $table->float('pyjama_amount')->nullable();
             $table->float('pyjama_total')->nullable();
             $table->float('total')->nullable();
-            $table->foreignId('measurements');
+            $table->foreignId('customers');
             $table->timestamps();
         });
     }
