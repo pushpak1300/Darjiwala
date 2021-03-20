@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\Nova\LoginController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MeasurementsController;
 use App\Http\Controllers\OrderController;

@@ -27,6 +27,7 @@ class CreateOrdersTable extends Migration
             $table->float('pyjama_total')->nullable();
             $table->float('total')->nullable();
             $table->foreignId('customers');
+            $table->foreignId('measurements');
             $table->timestamps();
         });
     }
