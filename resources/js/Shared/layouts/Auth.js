@@ -1,17 +1,21 @@
-import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-
+import React, { useEffect } from "react";
+// import { Switch, Route, Redirect } from "react-router-dom";
+import { InertiaLink } from "@inertiajs/inertia-react";
 // components
 
-import Navbar from "components/Navbars/AuthNavbar.js";
-import FooterSmall from "components/Footers/FooterSmall.js";
+import Navbar from "../Navbars/AuthNavbar.js";
+import FooterSmall from "../Footers/FooterSmall.js";
 
 // views
 
-import Login from "views/auth/Login.js";
-import Register from "views/auth/Register.js";
+import Login from "../../Pages/Auth/Login.js";
 
-export default function Auth() {
+export default function Auth({ title, children }) {
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+
   return (
     <>
       <Navbar transparent />
@@ -21,14 +25,12 @@ export default function Auth() {
             className="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-full"
             style={{
               backgroundImage:
-                "url(" + require("assets/img/register_bg_2.png").default + ")",
+                "https://d2wvwvig0d1mx7.cloudfront.net/data/org/194/media/img/cache/551x0/2132919_551x0.jpg",
             }}
           ></div>
-          <Switch>
-            <Route path="/auth/login" exact component={Login} />
-            <Route path="/auth/register" exact component={Register} />
-            <Redirect from="/auth" to="/auth/login" />
-          </Switch>
+          <article>
+            {children}
+          </article>
           <FooterSmall absolute />
         </section>
       </main>
