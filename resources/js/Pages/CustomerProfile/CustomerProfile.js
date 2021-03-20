@@ -20,7 +20,7 @@ const CustomerProfile = () => {
     return(
     <>
         
-       <div className="relative bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+        <div className="relative bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
                 <div className="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
                 <div className="ml-4 mt-2">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
@@ -31,12 +31,12 @@ const CustomerProfile = () => {
             </div>
         </div>
 
-        <div className="max-w-lg bg-white shadow-lg rounded-lg overflow-hidden my-4">
-            <img className="w-full h-10 object-cover object-center" 
+        <div className="flex-row justify-center max-w-lg bg-white shadow-lg rounded-lg overflow-hidden my-4">
+            {/* <img className="w-full h-10 object-cover object-center" 
             src="https://cdn.wallpapersafari.com/78/26/yl8PLG.jpg" 
             alt="avatar"> 
-            </img>
-            <div className=" py-3 px-6">
+            </img> */}
+            <div className="py-3 px-6">
             <h1 className="text-4xl font-bold text-gray-800">{data.name}</h1>
             <div className="flex items-center mt-4 text-gray-700">
                 <i className="fas fa-2x fa-user" ></i>
@@ -58,7 +58,7 @@ const CustomerProfile = () => {
                 <i className="fas fa-2x fa-calendar" ></i>
                 <h1 className="ml-3 px-2 text-md">{data.createdAt}</h1>
             </div>
-            <div className="flex justify-between items-center mt-4 gap-2"> <button className="w-full h-12 rounded-md border-2 text-md hover:shadow hover:bg-red-700 hover:border-red-700 hover:text-white "> Add measurements </button> <button className="w-full h-12 rounded-md bg-blue-700 text-white text-md hover:shadow hover:bg-blue-800">Chat</button> </div>
+            <div className="flex justify-between items-center mt-4 gap-2"> <button className="w-full h-12 rounded-md border-2 text-md hover:shadow hover:bg-red-700 hover:border-red-700 hover:text-white "> Add measurements </button> </div>
         </div>
     </div>
         
