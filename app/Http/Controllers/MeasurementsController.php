@@ -12,7 +12,7 @@ class MeasurementsController extends Controller
 {
     public function create(Customer $customer): Response
     {
-        return Inertia::render('Measurements/Create',[
+        return Inertia::render('Measurement/Create',[
            'customer' => $customer
         ]);
     }
@@ -20,7 +20,7 @@ class MeasurementsController extends Controller
     public function store(Request $request,Customer $customer)
     {
         $measurement = Measurement::create($request->all());
-        return Inertia::render('Measurements/Create',[
+        return Inertia::render('Measurement/Create',[
            'measurement' => $measurement
         ]);
     }

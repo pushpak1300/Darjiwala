@@ -14,4 +14,9 @@ class Measurement extends Model
         'kurta' => AsArrayObject::class,
         'pyjama' => AsArrayObject::class
     ];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class,'customers_id');
+    }
 }

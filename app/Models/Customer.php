@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+
+    public function measurements()
+    {
+       return $this->hasMany(Measurement::class,'customers_id');
+    }
 }

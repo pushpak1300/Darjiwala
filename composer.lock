@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5121e92a46c420e89fd90a0a3e9fb59f",
+    "content-hash": "fab36365177aac1a610f54a48ed87b8a",
     "packages": [
+        {
+            "name": "64robots/nova-fields",
+            "version": "0.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/64robots/nova-fields.git",
+                "reference": "868d4f3b2ab402b613ee563c83d488bf4c34b8f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/64robots/nova-fields/zipball/868d4f3b2ab402b613ee563c83d488bf4c34b8f2",
+                "reference": "868d4f3b2ab402b613ee563c83d488bf4c34b8f2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "R64\\NovaFields\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "R64\\NovaFields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/64robots/nova-fields/issues",
+                "source": "https://github.com/64robots/nova-fields/tree/0.20.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/beliolfa",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-02-17T11:38:46+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.3",
