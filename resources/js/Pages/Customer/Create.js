@@ -1,5 +1,5 @@
 import React from "react";
-import Admin from "../../Shared/layouts/Admin";
+import Admin from "../../Shared/Layouts/Admin";
 
 const Create = () => {
     return (
