@@ -96,7 +96,8 @@ const Index = () => {
             <ul className="relative divide-y divide-gray-200 bg-white">
                     { userData.map((e,i)=>{
                         return (
-                        <li key={i}> 
+                        <InertiaLink href="/customerprofile"> 
+                        <li key={i}>
                             <a href="/" className="block hover:bg-gray-50">
                                 <div className="flex items-center px-4 py-4 sm:px-6">
                                 <div className="min-w-0 flex-1 flex items-center">
@@ -129,6 +130,7 @@ const Index = () => {
                             </div>
                             </a>
                         </li>   
+                        </InertiaLink>
                         );
                     })}
             </ul >

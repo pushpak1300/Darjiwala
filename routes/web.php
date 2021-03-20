@@ -24,6 +24,10 @@ Route::get('/', function () {
         Inertia::render('Admin/Dashboard');
 })->name('admin');
 
+Route::get('/customerprofile', function () {
+    return Inertia::render('CustomerProfile/CustomerProfile');
+})->name('customerprofile');
+
 Route::resource('customer',CustomerController::class)->except(['edit','update','destroy']);
 
 Route::get('/customer/{customer}/order/create',[MeasurementsController::class,'create'])->name('order.create');
