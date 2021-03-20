@@ -19,7 +19,7 @@ class CreateCustomersTable extends Migration
             $table->string('mobile')->unique();
             $table->bigInteger('age')->nullable();
             $table->text('address')->nullable();
-            $table->text('email')->unique()->nullable();
+            $table->string('email')->unique('email')->nullable();
             $table->timestamps();
         });
     }
