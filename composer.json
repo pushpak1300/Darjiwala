@@ -15,7 +15,8 @@
         "inertiajs/inertia-laravel": "^0.4.0",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "tightenco/ziggy": "^1.0"
+        "tightenco/ziggy": "^1.0",
+        "jenssegers/mongodb": "^3.8"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
