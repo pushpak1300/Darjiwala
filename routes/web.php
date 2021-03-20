@@ -18,6 +18,6 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return
         Inertia::render('Hello');
-});
+})->name('hello');
 
 Auth::routes();
