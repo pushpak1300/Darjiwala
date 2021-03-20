@@ -24,12 +24,16 @@ Route::get('/', function () {
         Inertia::render('Admin/Dashboard');
 })->name('admin');
 
+Route::get('/customerprofile', function () {
+    return Inertia::render('CustomerProfile/CustomerProfile');
+})->name('customerprofile');
+
 Route::resource('customer',CustomerController::class)->except(['edit','update','destroy']);
 
-Route::get('/customer/{customer}/mesurement/create',[MeasurementsController::class,'create']);
-Route::post('/customer/{customer}/mesurement',[MeasurementsController::class,'store']);
-
-Route::get('/customer/{customer}/mesurement/{measurement}/order/create',[OrderController::class,'create']);
-Route::post('/customer/{customer}/mesurement/{measurement}/order',[OrderController::class,'store']);
+Route::get('/customer/{customer}/order/create',[MeasurementsController::class,'create'])->name('order.create');
+Route::post('/customer/{customer}/order',[MeasurementsController::class,'store'])->name('order.store');
+//
+//Route::get('/customer/{customer}/mesurement/{measurement}/order/create',[OrderController::class,'create']);
+//Route::post('/customer/{customer}/mesurement/{measurement}/order',[OrderController::class,'store']);
 
 Auth::routes();
