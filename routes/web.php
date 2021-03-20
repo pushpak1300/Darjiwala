@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -20,5 +21,6 @@ Route::get('/', function () {
         Inertia::render('Hello');
 })->name('hello');
 
+Route::resource('/customer',CustomerController::class);
 
 Auth::routes();
