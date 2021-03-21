@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fab36365177aac1a610f54a48ed87b8a",
+    "content-hash": "d74c631d9aa74a13b16e30ff76a0715b",
     "packages": [
         {
             "name": "64robots/nova-fields",
@@ -337,6 +337,54 @@
                 }
             ],
             "time": "2020-11-02T18:15:45+00:00"
+        },
+        {
+            "name": "codebykyle/calculated-field",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codebykyle/calculated-field.git",
+                "reference": "9216d02c15e0e4d8453ba79b4f1218e50e6548d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codebykyle/calculated-field/zipball/9216d02c15e0e4d8453ba79b4f1218e50e6548d4",
+                "reference": "9216d02c15e0e4d8453ba79b4f1218e50e6548d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Codebykyle\\CalculatedField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Codebykyle\\CalculatedField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A server side calculated field for Laravel Nova",
+            "keywords": [
+                "calculated",
+                "field",
+                "laravel",
+                "nova",
+                "server-side"
+            ],
+            "support": {
+                "issues": "https://github.com/codebykyle/calculated-field/issues",
+                "source": "https://github.com/codebykyle/calculated-field/tree/1.1"
+            },
+            "time": "2019-10-10T15:13:58+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1184,6 +1232,60 @@
                 }
             ],
             "time": "2020-04-13T13:17:36+00:00"
+        },
+        {
+            "name": "gregoriohc/laravel-nova-theme-responsive",
+            "version": "v0.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gregoriohc/laravel-nova-theme-responsive.git",
+                "reference": "a37f8162872ea7483d2dec7091d29e49376df273"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gregoriohc/laravel-nova-theme-responsive/zipball/a37f8162872ea7483d2dec7091d29e49376df273",
+                "reference": "a37f8162872ea7483d2dec7091d29e49376df273",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gregoriohc\\LaravelNovaThemeResponsive\\ThemeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gregoriohc\\LaravelNovaThemeResponsive\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gregorio Hernández Caso",
+                    "email": "gregoriohc@gmail.com",
+                    "homepage": "https://github.com/gregoriohc",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova responsive theme.",
+            "homepage": "https://github.com/gregoriohc/laravel-nova-theme-responsive",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/gregoriohc/laravel-nova-theme-responsive/issues",
+                "source": "https://github.com/gregoriohc/laravel-nova-theme-responsive/tree/master"
+            },
+            "time": "2020-03-08T16:15:03+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

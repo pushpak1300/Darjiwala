@@ -26,7 +26,8 @@ class CreateOrdersTable extends Migration
             $table->float('pyjama_amount')->nullable();
             $table->float('pyjama_total')->nullable();
             $table->float('total')->nullable();
-//            $table->foreignId('customers_id');
+            $table->float('advance')->nullable();
+            $table->string('fabric_image');
             $table->foreignId('measurements_id');
             $table->timestamps();
         });

@@ -2,6 +2,13 @@
 
 namespace App\Providers;
 
+use App\Nova\Metrics\CustomerPerDay;
+use App\Nova\Metrics\NewCustomer;
+use App\Nova\Metrics\NewOrders;
+use App\Nova\Metrics\OrderPerDay;
+use App\Nova\Metrics\PendingOrders;
+use App\Nova\Metrics\TotalOutstanding;
+use App\Nova\Metrics\TotalSales;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
@@ -56,7 +63,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            CustomerPerDay::make()->width('1/2'),
+            NewCustomer::make()->width('1/2'),
+            TotalSales::make()->width('1/2'),
+            TotalOutstanding::make()->width('1/2'),
+            OrderPerDay::make(),
+            PendingOrders::make(),
+            NewOrders::make(),
         ];
     }
 

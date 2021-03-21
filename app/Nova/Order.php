@@ -2,11 +2,18 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\NewOrders;
+use App\Nova\Metrics\OrderPerDay;
+use App\Nova\Metrics\PendingOrders;
+use Codebykyle\CalculatedField\BroadcasterField;
+use Codebykyle\CalculatedField\ListenerField;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Order extends Resource
@@ -46,6 +53,38 @@ class Order extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Date::make('Delivery Date')->required(),
             BelongsTo::make('Measurement', 'measurement'),
+            BelongsTo::make('FabricType', 'fabric'),
+            BelongsTo::make('Kurta Type', 'kurtaType')->nullable()
+                ->hideFromIndex(),
+            BroadcasterField::make('Kurta Quantity')
+                ->broadcastTo('kurta')
+                ->hideFromIndex(),
+            BroadcasterField::make('Kurta Amount')
+                ->broadcastTo('kurta')
+                ->hideFromIndex(),
+            Number::make('Kurta Total Amount', 'kurta_total')
+                ->hideFromIndex(),
+            BelongsTo::make('Pyjama Type', 'pyjamaType')->nullable()
+                ->hideFromIndex(),
+            BroadcasterField::make('Pyjama Quantity')
+                ->broadcastTo('pyjama')
+                ->hideFromIndex(),
+            BroadcasterField::make('Pyjama Amount')
+                ->broadcastTo('pyjama')
+                ->hideFromIndex(),
+            Number::make('Pyjama Total Amount', 'pyjama_total')
+                ->hideFromIndex(),
+            ListenerField::make('Total Amount', 'total')
+                ->listensTo(['pyjama', 'kurta'])
+                ->calculateWith(function ($values) {
+                    $q1 = $values->get('kurta_quantity');
+                    $a1 = $values->get('kurta_amount');
+                    $q2 = $values->get('pyjama_quantity');
+                    $a2 = $values->get('pyjama_amount');
+                    return ($q1 * $a1) + ($q2 * $a2);
+                }),
+            Number::make('Advance'),
+            File::make('Fabric Image')->disk('public'),
 
         ];
     }
@@ -58,7 +97,11 @@ class Order extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            NewOrders::make(),
+            OrderPerDay::make(),
+            PendingOrders::make()
+        ];
     }
 
     /**

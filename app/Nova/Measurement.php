@@ -6,6 +6,7 @@ use App\Models\KurtaMeasurementField;
 use App\Models\PyjamaMeasurementField;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use R64\NovaFields\JSON;
@@ -14,6 +15,8 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Measurement extends Resource
 {
+    public static $displayInNavigation = false;
+
     /**
      * The model the resource corresponds to.
      *
@@ -53,6 +56,8 @@ class Measurement extends Resource
             JSON::make('Kurta', $kurtaFields)->fieldClasses('w-full'),
             JSON::make('Pyjama', $pyjamaFields)->fieldClasses('w-full'),
             DateTime::make('Created At')->hideWhenCreating(),
+
+            HasMany::make('Orders')
         ];
     }
 
