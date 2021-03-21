@@ -81,7 +81,7 @@ const Index = () => {
                     Customer List
                     </h3>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between ml-2">
                         <input type="text" name="search_candidate" id="search_candidate" className="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-10 sm:hidden border-gray-300" placeholder="Search" 
                         onChange = {handleSearchChange}
                         />
