@@ -24,7 +24,7 @@ const Index = () => {
                       <div className="control">
                         <input
                           className="input"
-                          type="text"
+                          type="number"
                           placeholder="in cm"
                           name="name"
                         />
@@ -38,7 +38,7 @@ const Index = () => {
                       <div className="control">
                         <input
                           className="input"
-                          type="text"
+                          type="number"
                           placeholder="in cm"
                           name="Chest"
                         />
@@ -52,7 +52,7 @@ const Index = () => {
                       <div className="control">
                         <input
                           className="input"
-                          type="text"
+                          type="number"
                           placeholder="in cm"
                           name="shoulder"
                         />
@@ -66,7 +66,7 @@ const Index = () => {
                       <div className="control">
                         <input
                           className="input"
-                          type="text"
+                          type="number"
                           placeholder="in cm"
                           name="middle"
                         />
@@ -80,7 +80,7 @@ const Index = () => {
                       <div className="control">
                         <input
                           className="input"
-                          type="text"
+                          type="number"
                           placeholder="in cm"
                           name="lower"
                         />
@@ -101,11 +101,11 @@ const Index = () => {
                         </div>
 
                         <div className="flex flex-col">
-                          <p>19 cm</p>
-                          <p>29 cm</p>
-                          <p>12 cm</p>
-                          <p>56 cm</p>
-                          <p>19 cm</p>
+                          <p>10 cm</p>
+                          <p>10 cm</p>
+                          <p>10 cm</p>
+                          <p>10 cm</p>
+                          <p>10 cm</p>
                         </div>
                       </div>
                     </div>
