@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 
 class Customer extends Resource
 {
@@ -114,6 +115,8 @@ class Customer extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            new DownloadExcel()
+        ];
     }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Admin from "../../Shared/Layouts/Admin";
+import Admin from "../../Shared/layouts/Admin";
 
 // components
 

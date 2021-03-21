@@ -15,6 +15,8 @@ use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
+use R64\NovaFields\Text;
 
 class Order extends Resource
 {
@@ -86,6 +88,10 @@ class Order extends Resource
             Number::make('Advance'),
             File::make('Fabric Image')->disk('public'),
 
+            Text::make('View PDF', function () {
+                return "<a href='/orders/{$this->id}/pdf' target='_blank'>View PDF</a>";
+            })->asHtml()->onlyOnDetail(),
+
         ];
     }
 
@@ -98,9 +104,15 @@ class Order extends Resource
     public function cards(Request $request)
     {
         return [
-            NewOrders::make(),
-            OrderPerDay::make(),
-            PendingOrders::make()
+            NewOrders::make()->canSee(function () {
+                return request()->user()->hasPermissionTo('view-configure-resource');
+            }),
+            OrderPerDay::make()->canSee(function () {
+                return request()->user()->hasPermissionTo('view-configure-resource');
+            }),
+            PendingOrders::make()->canSee(function () {
+                return request()->user()->hasPermissionTo('view-configure-resource');
+            })
         ];
     }
 
@@ -134,6 +146,8 @@ class Order extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+        ];
     }
+
 }

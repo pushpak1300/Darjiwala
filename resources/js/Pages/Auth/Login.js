@@ -1,6 +1,6 @@
 import React from "react";
 
-import Auth from "../../Shared/Layouts/Auth";
+import Auth from "../../Shared/layouts/Auth";
 
 import { InertiaLink, useForm } from '@inertiajs/inertia-react'
 import { set } from "lodash";

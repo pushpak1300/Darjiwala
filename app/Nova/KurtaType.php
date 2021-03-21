@@ -90,4 +90,9 @@ class KurtaType extends Resource
     {
         return [];
     }
+
+    public static function availableForNavigation(Request $request)
+    {
+        return $request->user()->hasPermissionTo('view-configure-resource');
+    }
 }

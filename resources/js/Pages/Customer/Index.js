@@ -1,6 +1,6 @@
 import React from 'react';
-import { useEffect, useState } from "react"; 
-import Admin from '../../Shared/Layouts/Admin';
+import { useEffect, useState } from "react";
+import Admin from '../../Shared/layouts/Admin';
 
 import { InertiaLink } from "@inertiajs/inertia-react";
 
@@ -13,7 +13,7 @@ const props = {
             age : 34,
             address : "Abcde sdasd asdd",
             email : "abc@d.com"
-        }, 
+        },
         {
             id : 2,
             name : "Suresh",
@@ -21,7 +21,7 @@ const props = {
             age : 34,
             address : "Asda asdasdsdssdsadd",
             email : "pqrs@d.com"
-        }, 
+        },
         {
             id : 3,
             name : "Ethan",
@@ -29,7 +29,7 @@ const props = {
             age : 34,
             address : "asdasda asdasdsd",
             email : "tuv@d.com"
-        }, 
+        },
         {
             id : 4,
             name : "Pushpak",
@@ -37,22 +37,22 @@ const props = {
             age : 34,
             address : "asds asdsa asdsd",
             email : "wxy@d.com"
-        } 
+        }
     ]
 }
 
 const Index = () => {
 
-    
+
     const [userData,setUserData] = useState(props.data);
-    const [search, setSearch] = useState(''); 
+    const [search, setSearch] = useState('');
 
     const handleSearchChange = (event) => {
         const { value, name } = event.target;
         event.preventDefault();
-        setSearch(value); 
+        setSearch(value);
     }
-    
+
     useEffect(()=>{
         if(search === null || search === "") {
             setUserData(props.data)
@@ -61,17 +61,17 @@ const Index = () => {
                 let y = prev.filter((x)=>{
                     var re = new RegExp(`^${search}`, 'i');
                     console.log(x.mobile.match(re), x.mobile);
-                    let m = x.mobile.match(re); 
+                    let m = x.mobile.match(re);
                     let n = x.name.match(re)
                     if(m || n){
-                        return 1; 
+                        return 1;
                     }
-                }) 
-                return y; 
+                })
+                return y;
             })
         }
-        
-    },[search]); 
+
+    },[search]);
     return (
         <>
             <div className="relative bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
@@ -82,10 +82,10 @@ const Index = () => {
                     </h3>
                 </div>
                 <div className="flex items-center justify-between">
-                        <input type="text" name="search_candidate" id="search_candidate" className="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-10 sm:hidden border-gray-300" placeholder="Search" 
+                        <input type="text" name="search_candidate" id="search_candidate" className="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-10 sm:hidden border-gray-300" placeholder="Search"
                         onChange = {handleSearchChange}
                         />
-                        <input type="text" name="search_candidate" id="search_candidate" className="hidden focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-none rounded-l-md pl-10 sm:block sm:text-sm border-gray-300" placeholder="Search customers" 
+                        <input type="text" name="search_candidate" id="search_candidate" className="hidden focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-none rounded-l-md pl-10 sm:block sm:text-sm border-gray-300" placeholder="Search customers"
                         onChange = {handleSearchChange}
                         />
                         <InertiaLink href="/customer/create" as="button" type="button" className="ml-2 h-12 w-1/2 text-white rounded-md border-2 font-medium bg-blue-700 flex-wrap px-1 py-1">
@@ -94,11 +94,11 @@ const Index = () => {
                 </div>
                 </div>
             </div>
-            
+
             <ul className="relative divide-y divide-gray-200 bg-white">
                     { userData.map((e,i)=>{
                         return (
-                        <InertiaLink href="/customerprofile"> 
+                        <InertiaLink href="/customerprofile">
                         <li key={i}>
                             <a href="/" className="block hover:bg-gray-50">
                                 <div className="flex items-center px-4 py-4 sm:px-6">
@@ -113,7 +113,7 @@ const Index = () => {
                                             <p className="text-sm font-semibold text-gray-500">
                                                 {e.email}
                                             </p>
-                                             
+
                                             <p className="mt-2 flex items-center text-sm text-gray-500">
                                             <svg className="flex-shrink-0 mr-1.5 h-5 w-5 text-green-400" data-todo-x-description="Heroicon name: solid/check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
@@ -131,7 +131,7 @@ const Index = () => {
                                 </div>
                             </div>
                             </a>
-                        </li>   
+                        </li>
                         </InertiaLink>
                         );
                     })}

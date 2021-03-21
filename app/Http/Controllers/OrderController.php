@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Models\Customer;
 use App\Models\Measurement;
 use App\Models\Order;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -33,5 +35,12 @@ class OrderController extends Controller
         return Inertia::render('Order/Show', [
             'order' => $order
         ]);
+    }
+
+    public function pdf(Order $order)
+    {
+        $pdf = App::make('dompdf.wrapper');
+        $pdf = $pdf->loadView('pdf', $order)->setPaper('a4');
+        return $pdf->download('order.pdf');
     }
 }

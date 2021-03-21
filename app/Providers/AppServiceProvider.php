@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->loadViewsFrom(__DIR__.'/../../nova/resources/views', 'nova');
     }
 
     /**

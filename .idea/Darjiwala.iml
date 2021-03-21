@@ -130,6 +130,24 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/64robots/nova-fields" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/gregoriohc/laravel-nova-theme-responsive" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codebykyle/calculated-field" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/maennchen/zipstream-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/complex" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/matrix" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/maatwebsite/laravel-nova-excel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/maatwebsite/excel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravie/serialize-queries" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-permission" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vyuldashev/nova-permission" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phenx/php-svg-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phenx/php-font-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dompdf/dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sabberworm/php-css-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/silviolleite/laravelpwa" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

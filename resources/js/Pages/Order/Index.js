@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Admin from "../../Shared/Layouts/Admin";
+import Admin from "../../Shared/layouts/Admin";
 
 import Wizard from "../../Shared/Wizard";
 import Navigation from "../../Shared/Navigation";
@@ -12,7 +12,7 @@ const Index = () => {
     return (
         <div>
         <div className="relative bg-white overflow-hidden shadow rounded-lg md:max-w-lg mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      
+
           <div className=" md:max-w-lg">
               <div className="px-4 py-0 sm:p-6">
                 <h1 className="text-black text-sm uppercase font-semibold mb-3">Measurements</h1>

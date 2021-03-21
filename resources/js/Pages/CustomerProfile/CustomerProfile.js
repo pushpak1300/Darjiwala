@@ -1,8 +1,8 @@
 import React from 'react';
-import Admin from '../../Shared/Layouts/Admin';
-import { useEffect, useState } from "react"; 
+import Admin from '../../Shared/layouts/Admin';
+import { useEffect, useState } from "react";
 import { InertiaLink } from '@inertiajs/inertia-react';
-let date = new Date(); 
+let date = new Date();
 const props = {
     user : {
         id : 1,
@@ -13,11 +13,11 @@ const props = {
         email : "abc@d.com",
         createdAt : "15 Jan 2020"
     }
-    
+
 }
 
 const CustomerProfile = () => {
-    const [data,setData] = useState(props.user); 
+    const [data,setData] = useState(props.user);
     return(
     <>
 
@@ -65,4 +65,4 @@ const CustomerProfile = () => {
 
 
 CustomerProfile.layout = page => <Admin children={page} title="Customer Profile" />;
-export default CustomerProfile; 
+export default CustomerProfile;

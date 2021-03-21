@@ -63,11 +63,21 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            CustomerPerDay::make()->width('1/2'),
-            NewCustomer::make()->width('1/2'),
-            TotalSales::make()->width('1/2'),
-            TotalOutstanding::make()->width('1/2'),
-            OrderPerDay::make(),
+            CustomerPerDay::make()->width('1/2')->canSee(function (){
+                return request()->user()->hasPermissionTo('view-configure-resource');
+            }),
+            NewCustomer::make()->width('1/2')->canSee(function (){
+                return request()->user()->hasPermissionTo('view-configure-resource');
+            }),
+            TotalSales::make()->width('1/2')->canSee(function (){
+                return request()->user()->hasPermissionTo('view-configure-resource');
+            }),
+            TotalOutstanding::make()->width('1/2')->canSee(function (){
+                return request()->user()->hasPermissionTo('view-configure-resource');
+            }),
+            OrderPerDay::make()->canSee(function (){
+                return request()->user()->hasPermissionTo('view-configure-resource');
+            }),
             PendingOrders::make(),
             NewOrders::make(),
         ];
@@ -90,7 +100,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            \Vyuldashev\NovaPermission\NovaPermissionTool::make()->canSee(function (){
+                return request()->user()->hasPermissionTo('view-configure-resource');
+            }),
+        ];
     }
 
     /**
