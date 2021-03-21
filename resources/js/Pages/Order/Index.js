@@ -2,7 +2,11 @@ import React from 'react';
 
 import Admin from "../../Shared/Layouts/Admin";
 
-import { Wizard, Steps, Step, Navigation } from "react-hooks-multi-step-wizard";
+import Wizard from "../../Shared/Wizard";
+import Navigation from "../../Shared/Navigation";
+import Steps from "../../Shared/Steps";
+import Step from "../../Shared/Step";
+
 import "bulma";
 const Index = () => {
     return (

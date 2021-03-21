@@ -81,13 +81,16 @@ const Index = () => {
                     Customer List
                     </h3>
                 </div>
-                <div className="ml-4 mt-2 flex-shrink-0">
-                    <input type="text" name="search_candidate" id="search_candidate" className="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-10 sm:hidden border-gray-300" placeholder="Search" 
-                    onChange = {handleSearchChange}
-                    />
-                    <input type="text" name="search_candidate" id="search_candidate" className="hidden focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-none rounded-l-md pl-10 sm:block sm:text-sm border-gray-300" placeholder="Search customers" 
-                    onChange = {handleSearchChange}
-                    />
+                <div className="flex items-center justify-between">
+                        <input type="text" name="search_candidate" id="search_candidate" className="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-10 sm:hidden border-gray-300" placeholder="Search" 
+                        onChange = {handleSearchChange}
+                        />
+                        <input type="text" name="search_candidate" id="search_candidate" className="hidden focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-none rounded-l-md pl-10 sm:block sm:text-sm border-gray-300" placeholder="Search customers" 
+                        onChange = {handleSearchChange}
+                        />
+                        <InertiaLink href="/customer/create" as="button" type="button" className="ml-2 h-12 w-1/2 text-white rounded-md border-2 font-medium bg-blue-700 flex-wrap px-1 py-1">
+                            Add
+                        </InertiaLink>
                 </div>
                 </div>
             </div>

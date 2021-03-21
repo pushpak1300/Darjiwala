@@ -32,6 +32,10 @@ Route::get('/order/new', function () {
     return Inertia::render('Order/Index');
 })->name('neworder');
 
+Route::get('/customer/create', function () {
+    return Inertia::render('Customer/Create');
+})->name('newcustomer');
+
 Route::resource('customer',CustomerController::class)->except(['edit','update','destroy']);
 
 Route::get('/customer/{customer}/order/create',[MeasurementsController::class,'create'])->name('order.create');

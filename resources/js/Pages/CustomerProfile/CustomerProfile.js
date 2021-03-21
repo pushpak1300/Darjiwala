@@ -54,7 +54,7 @@ const CustomerProfile = () => {
             </div>
             <div className="flex justify-between items-center mt-4 gap-2">
                 <InertiaLink href="/order/new" as="button" type="button" className="mx-auto w-1/2 h-12 rounded-md border-2 text-md font-medium hover:shadow hover:bg-blue-700 hover:border-blue-700 hover:text-white ">
-                    Add measurements
+                    Create order
                 </InertiaLink>
             </div>
     </div>
